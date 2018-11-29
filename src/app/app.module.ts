@@ -8,11 +8,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ModalPageModule } from './pages/modal/modal.module';
+import { CanvasDrawComponent } from './canvas-draw/canvas-draw.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CanvasDrawComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ModalPageModule],
   providers: [
     StatusBar,
     SplashScreen,

@@ -1,12 +1,84 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar  color="primary">
     <ion-title>
-      Ionic Blank
+      Famous Restaurants in NYC
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <ion-card (swipe)="swipeEvent()" >
+    <ion-img src="https://assets3.thrillist.com/v1/image/2674110/size/tl-full_width_2x.jpg"
+             alt="Europe Image"></ion-img>
+    <ion-card-header>
+        <ion-card-title>Restaurants in NYC</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <p>The phrase “New York minute” could describe how long most restaurants stay open here. Depending on how you count, there might be 30,000 eateries open in the city right now -- enough for three meals a day, each from a different place, for the next 27 years -- but the most ambitious restaurants among them might stay open for only a matter of a few months.</p>
+    </ion-card-content>
+</ion-card>
+
+<ion-list  lines="inset">
+  <ion-list-header>
+      <ion-icon color="success" name="restaurant"></ion-icon>
+      <ion-title class="title">Top Restaurants in NYC</ion-title>
+  </ion-list-header>
+  <ion-toolbar>
+      <ion-searchbar  placeholder="Search Restaurants..."></ion-searchbar>
+  </ion-toolbar>
+
+  <ion-item >
+      <ion-label class="labelcolor">Frenchette</ion-label>
+      <ion-button  href="#" onclick="window.open('http://www.frenchettenyc.com/'
+      , '_system','location=yes');" fill="solid" slot="end">Visit Website</ion-button>
+  </ion-item>
+  <ion-item>
+      <ion-label class="labelcolor">Xi'an Famous Foods</ion-label>
+      <ion-button href="#" onclick="window.open('https://www.xianfoods.com/'
+      , '_system','location=yes');" fill="solid" slot="end">Visit Website</ion-button>
+  </ion-item>
+  <ion-item >
+      <ion-label class="labelcolor">Le Coucou </ion-label>
+      <ion-button href="#" onclick="window.open('https://lecoucou.com/'
+      , '_system','location=yes');" fill="solid" slot="end">Visit Website</ion-button>
+  </ion-item>
+  <ion-item >
+      <ion-label class="labelcolor">Wildair</ion-label>
+      <ion-button href="#" onclick="window.open('http://wildair.nyc/'
+      , '_system','location=yes');" fill="solid" slot="end">Visit Website</ion-button>
+  </ion-item>
+  <ion-item >
+      <ion-label class="labelcolor">Shuko</ion-label>
+      <ion-button href="#" onclick="window.open('https://www.shukonyc.com/'
+      , '_system','location=yes');" fill="solid" slot="end">Visit Website</ion-button>
+  </ion-item>
+  <ion-item >
+      <ion-label class="labelcolor"> Via Carota </ion-label>
+      <ion-button href="#" onclick="window.open('http://www.viacarota.com/'
+      , '_system','location=yes');"  fill="solid" slot="end">Visit Website</ion-button>
+  </ion-item>
+</ion-list>
+
+<ion-button  color="primary"  [routerLink]="['/canvas-draw']" routerDirection="forward">View Bridget Riley</ion-button>
+<ion-list>
+  <ion-list-header>
+    <ion-icon color="success" name="contacts"></ion-icon>
+      <ion-title class="title"> For more information.Submit your queries.</ion-title>
+  </ion-list-header>
+
+  <ion-item>
+      <ion-label position="floating">First Name</ion-label>
+      <ion-input clearInput [(ngModel)]="firstNameValue"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="floating">Last Name</ion-label>
+      <ion-input clearInput [(ngModel)]="lastNameValue"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label position="floating">Comments</ion-label>
+  <ion-textarea ></ion-textarea>
+  </ion-item>
+  <ion-button expand="block" color="primary" (click)="openModal()">Submit</ion-button>
+</ion-list>
+
 </ion-content>
